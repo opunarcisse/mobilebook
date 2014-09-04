@@ -1,0 +1,39 @@
+<h1>Listing personnels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Specialist</th>
+      <th>Title</th>
+      <th>Name</th>
+      <th>Start date</th>
+      <th>Email address</th>
+      <th>Duty station</th>
+      <th>Phone</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personnels.each do |personnel| %>
+      <tr>
+        <td><%= personnel.specialist %></td>
+        <td><%= personnel.title %></td>
+        <td><%= personnel.name %></td>
+        <td><%= personnel.start_date %></td>
+        <td><%= personnel.email_address %></td>
+        <td><%= personnel.duty_station %></td>
+        <td><%= personnel.phone %></td>
+        <td><%= personnel.remarks %></td>
+        <td><%= link_to 'Show', personnel %></td>
+        <td><%= link_to 'Edit', edit_personnel_path(personnel) %></td>
+        <td><%= link_to 'Destroy', personnel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personnel', new_personnel_path %>

@@ -1,0 +1,37 @@
+<h1>Listing institutes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Visiting address</th>
+      <th>Email address</th>
+      <th>Operational mode</th>
+      <th>City</th>
+      <th>Phone</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutes.each do |institute| %>
+      <tr>
+        <td><%= institute.name %></td>
+        <td><%= institute.visiting_address %></td>
+        <td><%= institute.email_address %></td>
+        <td><%= institute.operational_mode %></td>
+        <td><%= institute.city %></td>
+        <td><%= institute.phone %></td>
+        <td><%= institute.remarks %></td>
+        <td><%= link_to 'Show', institute %></td>
+        <td><%= link_to 'Edit', edit_institute_path(institute) %></td>
+        <td><%= link_to 'Destroy', institute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Institute', new_institute_path %>

@@ -1,0 +1,52 @@
+<h1>Listing consults</h1>
+
+<% @consults.each do | consult |   %>
+<div class="consult"> 
+<%= consult.complain_of_patient %>
+  </div>
+<% end  %>
+
+
+<br>
+
+<%= link_to 'New Consult', new_member_consult_path %>
+
+<br/>
+<%= form_for [@complain, Consult.new] do |f| %>
+ 
+  <div class="field">
+    <%= f.label :complain_of_patient %><br>
+    <%= f.text_area :complain_of_patient %>
+  </div>
+  <div class="field">
+    <%= f.label :diagnostic_of_doctor %><br>
+    <%= f.text_area :diagnostic_of_doctor %>
+  </div>
+  <div class="field">
+    <%= f.label :prescription_of_doctor %><br>
+    <%= f.text_area :prescription_of_doctor %>
+  </div>
+  <div class="field">
+    <%= f.label :drugs_delivered %><br>
+    <%= f.text_field :drugs_delivered %>
+  </div>
+  <div class="field">
+    <%= f.label :drugs_delivered_on %><br>
+    <%= f.date_select :drugs_delivered_on %>
+  </div>
+  <div class="field">
+    <%= f.label :drugs_delivered_by %><br>
+    <%= f.text_field :drugs_delivered_by %>
+  </div>
+  <div class="field">
+    <%= f.label :complain_id %><br>
+    <%= f.number_field :complain_id %>
+  </div>
+  <div class="field">
+    <%= f.label :complain_type %><br>
+    <%= f.text_field :complain_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

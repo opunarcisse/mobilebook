@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Complain of patient:</strong>
+  <%= @consult.complain_of_patient %>
+</p>
+
+<p>
+  <strong>Diagnostic of doctor:</strong>
+  <%= @consult.diagnostic_of_doctor %>
+</p>
+
+<p>
+  <strong>Prescription of doctor:</strong>
+  <%= @consult.prescription_of_doctor %>
+</p>
+
+<p>
+  <strong>Drugs delivered:</strong>
+  <%= @consult.drugs_delivered %>
+</p>
+
+<p>
+  <strong>Drugs delivered on:</strong>
+  <%= @consult.drugs_delivered_on %>
+</p>
+
+<p>
+  <strong>Drugs delivered by:</strong>
+  <%= @consult.drugs_delivered_by %>
+</p>
+
+<p>
+  <strong>Complain:</strong>
+  <%= @consult.complain_id %>
+</p>
+
+<p>
+  <strong>Complain type:</strong>
+  <%= @consult.complain_type %>
+</p>
+
+<%= link_to 'Edit', edit_member_consult_path(:id, @consult) %> |
+<%= link_to 'Back', member_consults_path %>
